@@ -1,0 +1,16 @@
+// Task.swift
+import Foundation
+
+class Task {
+    var name: String
+    var isCompleted: Bool
+    
+    init(name: String, isCompleted: Bool = false) {
+        self.name = name
+        self.isCompleted = isCompleted
+    }
+    
+    func toggleCompletion() {
+        isCompleted.toggle()
+    }
+}
