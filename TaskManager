@@ -14,3 +14,29 @@ class Task {
         isCompleted.toggle()
     }
 }
+
+// TaskManager.swift
+import Foundation
+
+class TaskManager {
+    private var tasks: [Task] = []
+    
+    func addTask(name: String) {
+        let newTask = Task(name: name)
+        tasks.append(newTask)
+    }
+    
+    func removeTask(at index: Int) {
+        guard index >= 0 && index < tasks.count else { return }
+        tasks.remove(at: index)
+    }
+    
+    func toggleTaskCompletion(at index: Int) {
+        guard index >= 0 && index < tasks.count else { return }
+        tasks[index].toggleCompletion()
+    }
+    
+    func getTasks() -> [Task] {
+        return tasks
+    }
+}
